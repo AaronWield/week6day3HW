@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="api/css/main.css">
+<script src="api/js/main.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<title>F1 Standings</title>
+</head>
+<body>
+    <style>
+        body {
+        background-image: url(https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2021%2F0913%2Fr908563_2_1296x729_16%2D9.jpg);
+        }
+    </style>
+    <div class="row">
+        <form>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="api/css/images/max-lewis.png" class="pic" alt="">
+            </div>
+            <div class="col-md-2" id="standings">
+                <input type="text" onfocus="this.value=''" class="form-control" id="season" placeholder="Season (Year)">
+            </div>
+            <div class="col-md-2" id="standings">
+                <input type="text" onfocus="this.value=''" class="form-control" id="round" placeholder="Round">
+            </div>
+            <div class="col-md-2" id="standings">
+                <button type="button" class="btn btn-primary" onclick="loadData()">Show Standings</button>
+                <button type="button" class="btn btn-danger" onclick="clearData()">Clear Standings</button>
+            </div>
+            <div class="col-md-3">
+                <img src="api/css/images/f1-5.png" class="pic" alt="">
+            </div>
+        </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <table class="table table-hover" style="display: none;">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Position</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Nationality</th>
+                        <th scope="col">Constructor</th>
+                        <th scope="col">Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-primary" id='tr-0'></tr>
+                    <tr class="table-warning" id='tr-1'></tr>
+                    <tr class="table-secondary" id='tr-2'></tr>
+                    <tr class="table-info" id='tr-3'></tr>
+                    <tr class="table-success" id='tr-4'></tr>
+                    <tr class="table-light" id='tr-5'></tr>
+                    <tr class="table-danger" id='tr-6'></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
